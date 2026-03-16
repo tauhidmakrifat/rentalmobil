@@ -1,0 +1,571 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+
+.navbar {
+    padding: 20px 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.281);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-weight: bold;
+}
+
+.logo span {
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+nav  ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 50px;
+}
+
+.active {
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    color: white;
+    padding: 8px 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.active:focus,
+.active:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.538);
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+.hero-section {
+    background: rgba(0, 110, 255, 0.116);
+    padding: 170px 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.hero-description span {
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description h1{
+    font-size: 100px;
+    margin-right: 200px;
+}
+
+.hero-description p{
+    padding-top: 35px;
+    font-size: 25px;
+    margin-right: 150px;
+}
+
+.hero-button button {
+    margin-right: 25px;
+    margin-top: 35px;
+    padding: 18px 40px;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.btn-color {
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    color: white;
+    border: 1px solid black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.392);
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-color:hover {
+    background: none;
+    color: black;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.392);
+}
+
+.non-border {
+    background-color: white;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.392);
+    transition: 0.3s;
+}
+
+.non-border:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.489);
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    color: white;
+}
+
+
+.hero-img img{
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.514);
+    transform: rotate(2deg);
+    width: 700px;
+    height: 550px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.hero-img img:hover {
+    transform: rotate(0deg);
+}
+.atas {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.504), rgba(183, 0, 255, 0.504));
+    transform: translate(580px, -35px);
+    text-align: right;
+    border-radius: 50%;
+    filter: blur(8px);
+    animation: slidey 2.5s infinite;
+}
+
+.bulet {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    filter: blur(5px);
+    transform: translate(-40px, 440px);
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.603), rgba(0, 255, 242, 0.504));
+    border-radius: 50%;
+    animation: slide 2.5s infinite;
+}
+@keyframes slide {
+    0%, 100%{transform: translate(-40px, 450px);}
+    50%{transform: translate(-40px, 465px);}
+}
+@keyframes slidey {
+    0%, 100%{transform: translate(580px, -35px);}
+    50%{transform: translate(570px, -35px);}
+}
+
+
+
+
+.mobil-section {
+    padding: 100px 150px;
+    text-align: center;
+}
+
+
+.pilihan-mobil {
+    padding: 30px;
+    margin: 30px;
+}
+
+.pilihan-mobil h1 {
+    font-size: 40px;
+}
+
+.pilihan-mobil h1 span{
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.pilihan-mobil p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.card-mobil {
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.17);
+    margin: 20px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 460px;
+    height: auto;
+    transition: 0.3s;
+}
+
+.card-mobil:hover {
+    transform: translateY(-10px);
+}
+
+.mobil-img {
+    margin-top: 15px;
+}
+.mobil-img img {
+    border-radius: 10px 10px 0px 0px;
+    height: 300px;
+    width: 400px;
+    transition: 0.3s;
+}
+
+.mobil-img img:hover {
+    transform: scale(1.08);
+}
+
+
+.mobil-description {
+    padding-left: 20px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.mobil-description h3 {
+    font-size: 25px;
+}
+
+.mobil-description h2 {
+    margin-top: 15px;
+    color: blue;
+    text-align: left;
+}
+
+.mobil-description h2>span {
+    color: black;
+    font-size: 20px;
+}
+
+.mobil-description p{
+    margin-top: 15px;
+    text-align: left;
+}
+.mobil-btn button a {
+    color: white;
+    text-decoration: none;
+}
+.mobil-btn button {
+    cursor: pointer;
+    margin-top: 25px;
+    margin: 25px;
+    border: none;
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    width: 90%;
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.mobil-btn button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.538);
+}
+
+.services {
+    text-align: center;
+    background: rgba(0, 110, 255, 0.116);
+}
+
+.services-tittle h1{
+    padding-top: 80px;
+}
+
+.services-tittle h1>span{
+    background: linear-gradient(to right, blue, rgb(221, 0, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.services-card {
+    display: inline-block;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.442);
+    transition: 0.3s;
+}
+
+.services-card:hover {
+    transform: translateY(-20px);
+}
+
+.card-services {
+    transition: 0.3s;
+}
+
+.card-services:hover {
+    transform: scale(1.1);
+}
+
+.card-services i {
+    height: 70px;
+    width: 70px;
+    margin: 15px;
+    border-radius: 50px;
+}
+
+.card-services h2 {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+@media (max-width:1300px) {
+    .navbar {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    nav ul li {
+        margin-left: 20px;
+        padding-top: 15px;
+    }
+    nav ul li a {
+        font-size: 15px;
+    }
+    .hero-section {
+        padding: 40px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-section h1 {
+        margin-right: 0px;
+        font-size: 40px;
+        text-align: center;
+    }
+    .hero-section p {
+        margin-right: 0px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .hero-button button {
+        font-size: 15px;
+        padding: 15px 25px;
+    }
+    .hero-section img {
+        margin-top: 60px;
+        width: 500px;
+        height: 350px;
+    }
+
+    .mobil-img img {
+         height: 200px;
+        width: 350px;
+    }
+    .mobil-btn button {
+        height: 40px;
+        width: 80%;
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width:1100px) {
+    .navbar {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin-left: 20px;
+        padding-top: 15px;
+    }
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    .hero-section {
+        padding: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-section h1 {
+        margin-right: 0px;
+        font-size: 40px;
+        text-align: center;
+    }
+    .hero-section p {
+        margin-right: 0px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .hero-button button {
+        font-size: 15px;
+        padding: 15px 25px;
+    }
+    .hero-section img {
+        margin-top: 60px;
+        width: 500px;
+        height: 350px;
+    }
+    .mobil-btn button {
+        height: 40px;
+        width: 80%;
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width:805px) {
+    .navbar {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin-left: 20px;
+        padding-top: 15px;
+    }
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    .hero-section {
+        padding: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-section h1 {
+        margin-right: 0px;
+        font-size: 40px;
+        text-align: center;
+    }
+    .hero-section p {
+        margin-right: 0px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .hero-button button {
+        font-size: 15px;
+        padding: 15px 25px;
+    }
+    .hero-section img {
+        margin-top: 60px;
+        width: 500px;
+        height: 350px;
+    }
+
+    .mobil-section {
+        padding: 20px;
+    }
+    .mobil-img img {
+        height: 200px;
+        width: 350px;
+    }
+    .mobil-btn button {
+        height: 40px;
+        width: 80%;
+        font-size: 15px;
+    }
+    .services-card {
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        flex-direction: column;
+    }
+    .card-services img {
+        height: 30px;
+        width: 30px;
+        margin: 5px;
+        border-radius: 50px;
+    }
+    .card-services h2 {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width:560px) {
+    .navbar {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin-left: 20px;
+        padding-top: 15px;
+    }
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    .hero-section {
+        padding: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-section h1 {
+        margin-right: 0px;
+        font-size: 40px;
+        text-align: center;
+    }
+    .hero-section p {
+        margin-right: 0px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .hero-button button {
+        font-size: 15px;
+        padding: 15px 25px;
+    }
+    .hero-section img {
+        margin-top: 60px;
+        width: 400px;
+        height: 250px;
+    }
+
+    .mobil-section {
+        padding: 20px;
+    }
+    .mobil-img img {
+        height: 150px;
+        width: 300px;
+    }
+    .mobil-btn button {
+        height: 40px;
+        width: 80%;
+        font-size: 15px;
+    }
+    .services-card {
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        flex-direction: column;
+    }
+    .card-services img {
+        height: 30px;
+        width: 30px;
+        margin: 5px;
+        border-radius: 50px;
+    }
+    .card-services h2 {
+        font-size: 15px;
+    }
+}

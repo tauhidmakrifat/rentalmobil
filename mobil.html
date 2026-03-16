@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa Mobil Impian Anda - Rental Mobil Keren</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ================================================= */
+        /* KODE CSS (style.css) DI SINI */
+        /* ================================================= */
+        
+        /* RESET DAN FONT */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* TOMBOL UTAMA */
+        .btn-primary {
+            background-color: #ff5722; /* Warna Oranye Keren */
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #e64a19;
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+
+        .btn-secondary {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0056b3;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: rgba(10, 10, 10, 0.9);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease; /* Transisi untuk JS scroll */
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #ff5722;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links li a:hover {
+            color: #ff5722;
+        }
+
+        /* Efek Garis Bawah saat Hover */
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #ff5722;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+            left: 0;
+            background: #ff5722;
+        }
+
+        /* HERO SECTION (Efek Parallax) */
+        .hero-section {
+            /* Ganti URL ini dengan gambar mobil keren Anda! */
+            background-image: url('https://images.unsplash.com/photo-1594950860368-2a86847c20f0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            /* Properti Parallax */
+            background-attachment: fixed; 
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5); /* Overlay gelap agar teks jelas */
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        /* SECTION UMUM */
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #ff5722;
+            margin: 10px auto 30px;
+            border-radius: 2px;
+        }
+
+        .section-description {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #777;
+            font-size: 1.1em;
+        }
+
+        /* MOBIL CARD (Efek Zoom/Glow saat Hover) */
+        .car-section {
+            background-color: white;
+        }
+
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .car-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 0;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px); /* Efek angkat */
+            box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3); /* Efek glow oranye */
+        }
+
+        .car-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transition: transform 0.5s ease;
+        }
+
+        .car-card:hover .car-image {
+            transform: scale(1.05); /* Efek zoom gambar saat hover */
+        }
+
+        .car-card h3 {
+            font-size: 1.5em;
+            margin-top: 15px;
+            color: #ff5722;
+        }
+
+        .car-details {
+            color: #999;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .car-price {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .car-card .btn-secondary {
+            display: block;
+            width: 90%;
+            margin: 0 auto 15px;
+            padding: 12px 0;
+            font-weight: 600;
+        }
+
+        /* SERVICE SECTION */
+        .services-section {
+            background: linear-gradient(135deg, #f0f0f5, #e0e0e9);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .service-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+            background: #ff5722;
+            color: white;
+        }
+
+        .service-item:hover i {
+            color: white;
+        }
+
+        .service-item i {
+            color: #ff5722;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .service-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background-color: #333;
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            background-color: #444;
+            color: white;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #bbb;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background-color: #1a1a1a;
+            color: #bbb;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        .site-footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: #bbb;
+            margin-left: 15px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">RentCar 🚗</a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#mobil">Mobil Kami</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section parallax">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Temukan Perjalanan Impian Anda</h1>
+            <p>Pilihan mobil premium dengan harga terbaik. Siap untuk petualangan?</p>
+            <a href="#mobil" class="btn-primary">Lihat Armada Kami</a>
+        </div>
+    </section>
+
+    <section id="mobil" class="car-section">
+        <div class="container">
+            <h2 data-aos="fade-right">Armada Premium Kami</h2>
+            <p class="section-description" data-aos="fade-left">Pilih mobil yang sesuai dengan gaya dan kebutuhan perjalanan Anda.</p>
+
+            <div class="car-grid">
+                <div class="car-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1542362543-c99797089450?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport Car" class="car-image">
+                    <h3>Sport Car X</h3>
+                    <p class="car-details">Matic | 2 Penumpang | Bensin</p>
+                    <div class="car-price">Rp 800.000 / hari</div>
+                    <a href="#" class="btn-secondary">Sewa Sekarang</a>
+                </div>
+
+                <div class="car-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Luxury Sedan" class="car-image">
+                    <h3>Luxury Sedan Z</h3>
+                    <p class="car-details">Matic | 4 Penumpang | Bensin</p>
+                    <div class="car-price">Rp 650.000 / hari</div>
+                    <a href="#" class="btn-secondary">Sewa Sekarang</a>
+                </div>
+
+                <div class="car-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1596482142468-b86e08dd1d71?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Family SUV" class="car-image">
+                    <h3>Family SUV M</h3>
+                    <p class="car-details">Matic | 7 Penumpang | Diesel</p>
+                    <div class="car-price">Rp 750.000 / hari</div>
+                    <a href="#" class="btn-secondary">Sewa Sekarang</a>
+                </div>
+
+                <div class="car-card" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1599818817281-209212c42493?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Electric Hatchback" class="car-image">
+                    <h3>Electric Hatchback E</h3>
+                    <p class="car-details">Otomatis | 4 Penumpang | Listrik</p>
+                    <div class="car-price">Rp 500.000 / hari</div>
+                    <a href="#" class="btn-secondary">Sewa Sekarang</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="layanan" class="services-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Layanan Terbaik Kami</h2>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="100">Kami memberikan kemudahan dan kenyamanan dalam setiap perjalanan Anda.</p>
+            <div class="service-grid">
+                <div class="service-item" data-aos="flip-right" data-aos-delay="200">
+                    <i class="fas fa-route fa-3x"></i>
+                    <h3>Tanpa Batas Jarak</h3>
+                    <p>Jelajahi setiap sudut kota tanpa khawatir batas kilometer.</p>
+                </div>
+                <div class="service-item" data-aos="flip-right" data-aos-delay="300">
+                    <i class="fas fa-shield-alt fa-3x"></i>
+                    <h3>Asuransi Penuh</h3>
+                    <p>Perjalanan aman dan nyaman dengan perlindungan asuransi lengkap.</p>
+                </div>
+                <div class="service-item" data-aos="flip-right" data-aos-delay="400">
+                    <i class="fas fa-headset fa-3x"></i>
+                    <h3>Dukungan 24/7</h3>
+                    <p>Tim kami siap membantu Anda kapan pun, siang atau malam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="contact-section">
+        <div class="container" data-aos="fade-zoom-in">
+            <h2>Hubungi Kami Sekarang</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="email" placeholder="Email Anda" required>
+                <textarea placeholder="Pesan atau Pertanyaan Anda..." rows="5" required></textarea>
+                <button type="submit" class="btn-primary">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 RentCar. Semua Hak Cipta Dilindungi.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Mengaktifkan Library AOS (Animate On Scroll)
+            AOS.init({
+                duration: 1000,     // Durasi animasi (dalam ms)
+                once: true,         // Animasi hanya berjalan satu kali per elemen
+                easing: 'ease-in-out' // Gaya easing
+            });
+
+            // 2. Efek Mengubah Navbar saat Discroll
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.backgroundColor = 'rgba(10, 10, 10, 1)'; // Lebih gelap saat scroll
+                } else {
+                    navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.9)'; // Lebih transparan di atas
+                }
+            });
+
+            // 3. Efek Smooth Scrolling untuk link navigasi
+            document.querySelectorAll('.nav-links a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Menghitung posisi scroll dengan memperhitungkan tinggi navbar
+                        const navbarHeight = navbar.offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
